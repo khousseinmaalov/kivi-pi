@@ -7,6 +7,7 @@ from kivy.uix.floatlayout import FloatLayout
 import threading
 from time import sleep
 from functools import partial
+import socket
 
 k = 10
 
@@ -24,7 +25,7 @@ def vraiment_rien():
 	global k
 	while 1:
 		sleep(1)
-		print(k)
+		socket.send(k.encode())
 
 def rien():
 	global k
