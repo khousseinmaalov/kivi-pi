@@ -10,6 +10,16 @@ from functools import partial
 
 k = 10
 
+hote = "127.0.0.1"
+port = 15555
+
+
+socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+
+socket.connect((hote, port))
+
+print("Connection sur {}".format(port))
+
 def vraiment_rien():
 	global k
 	while 1:
