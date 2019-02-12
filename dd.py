@@ -7,12 +7,20 @@ from kivy.uix.floatlayout import FloatLayout
 import threading
 from time import sleep
 from functools import partial
+import socket
 
 k = 10
 
+hote = "127.0.0.1"
+port = 15555
+socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+socket.connect((hote, port))
+
+print("Connection sur {}".format(port))
+
 def gh(direction, h):
 	global k
-	print(direction)
+	socket.send(direction.encode())
 
 class TestApp(App):
 
